@@ -9,7 +9,6 @@ echo "Downloading sratoolkit from ncbi..."
 wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.7/sratoolkit.2.5.7-ubuntu64.tar.gz
 tar xvzf sratoolkit.2.5.7-ubuntu64.tar.gz
 chmod a+x sratoolkit.2.5.7-ubuntu64/bin/*
-cp -r sratoolkit.2.5.7-ubuntu64/bin/* /usr/bin
 
 # download aspera connect
 echo "Downloading Aspera Connect tool..."

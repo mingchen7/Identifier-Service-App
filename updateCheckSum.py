@@ -39,10 +39,10 @@ def md5(fname):
     return hash_md5.hexdigest()
 
 def _client():
-	client_key = '9hBjqdHUWW4qaBXz7TH4fInfrdYa'				  
-	client_secret = 'xTsH1WesLavMsR1VXtC_WEh7Qzoa'	
-	token = '5d19d4bb43244be7764f2426974c455'
-	refresh_token = '9de2881b493aefa72453eba7c60331'
+	client_key = ''				  
+	client_secret = ''	
+	token = ''
+	refresh_token = ''
 
 	try:		
 		agave = Agave(
