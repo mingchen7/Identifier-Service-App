@@ -8,7 +8,7 @@ import hashlib
 import datetime
 from argparse import ArgumentParser
 from agavepy.agave import Agave, AgaveException
-from pprint import pprint
+# from pprint import pprint
 
 # SAMPLE JSON METADATA
 # body =  {	
