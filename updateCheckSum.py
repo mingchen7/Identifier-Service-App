@@ -8,6 +8,7 @@ import hashlib
 import datetime
 from argparse import ArgumentParser
 from agavepy.agave import Agave, AgaveException
+from pprint import pprint
 
 # SAMPLE JSON METADATA
 # body =  {	
@@ -39,15 +40,23 @@ def md5(fname):
     return hash_md5.hexdigest()
 
 def _client():
+	DIR_HOME = os.path.expanduser('~')
+	AGAVE_AUTH_PATH = os.path.join(DIR_HOME, '.agave/current')
+	with open(AGAVE_AUTH_PATH) as auth_file:
+		auth = json.load(auth_file)
+
+	# print type(auth)
+	# print(auth)
+
 	client_key = '9hBjqdHUWW4qaBXz7TH4fInfrdYa'				  
 	client_secret = 'xTsH1WesLavMsR1VXtC_WEh7Qzoa'	
-	token = 'c2748cdeb8b8712b6e3c397e7f02d86'
-	refresh_token = '5683c81ec4a7a7ec7a122125b24a7c2f'
+	token = auth['access_token']
+	refresh_token = auth['refresh_token']
 
-	try:		
-		agave = Agave(
-	        token=token, refresh_token=refresh_token, api_key=client_key,
-	        api_secret=client_secret, api_server='https://agave.iplantc.org',
+	try:			
+	    agave = Agave(
+	        token=token, refresh_token=refresh_token, api_key=client_key, api_secret=client_secret, 
+	        api_server='https://agave.iplantc.org',
 	        client_name='Default', verify=False
 	    )
 		
