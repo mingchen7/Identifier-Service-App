@@ -17,7 +17,7 @@ from agavepy.agave import Agave, AgaveException
 # 					"Publisher": "Plant Physiology", 
 # 					"publicationYear":"2015",
 # 					"Identifier": "doi:10.5072/FK2",
-# 					"identifierType": "DOI",
+#					"identifierType": "DOI",
 # 					"Subject":"Plant biology",
 # 					"Date": "2015-04-22",
 # 					"resourceType": "test",
