@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# load python module and install agavepy
+module load python
+source virtualenvwrapper.sh
+mkvirtualenv agave
+pip install agavepy bpython
+workon agave
+
+# install aspera connect tools
+chmod 755 ./bin/install.sh
+chmod 755 ./bin/aspera.sh
+./bin/install.sh
+
+# get UUID and SRA number
+UUID=${UUID}
+SRA_NUM=${SRA}
+STORE_PATH="./SRR/"
+# echo "${STORE_PATH}${SRA_NUM}.sra"
+
+# Downloading file
+./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
+
+
+# Running checksum and update metadata
+if [ $? -eq 0 ]; then
+	SRA_FILE="${STORE_PATH}${SRA_NUM}.sra"
+else
+	exit 1
+fi
+
+python ./bin/updateCheckSum.py ${UUID} ${SRA_FILE}
+rm -rf SRR
+rm aspera-connect-3.6.2.117442-linux-64.sh
+rm aspera-connect-3.6.2.117442-linux-64.tar.gz
+exit 0
