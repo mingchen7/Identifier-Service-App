@@ -1,0 +1,18 @@
+{
+    "jobName": "ids-checksum-01",
+    "softwareName": "ming-ids-checksum-0.1",
+    "processorsPerNode": 16,
+    "requestedTime": "01:00:00",
+    "memoryPerNode": 2,
+    "nodeCount": 1,
+    "batchQueue": "debug",
+    "archive": true,
+    "archivePath": "",
+    "inputs": {
+        "agaveAuth": "agave://data.iplantcollaborative.org/mingchen7/others/authentication.json"
+    },
+    "parameters":{
+        "UUID":"4181808582778351130-242ac1110-0001-012",
+        "SRA":"SRR292241"
+    }
+}

@@ -5,7 +5,7 @@
  "defaultMaxRunTime":"01:00:00",
  "defaultNodeCount":1,
  "defaultQueue":"debug",
- "deploymentPath":"mingchen7/applications/samtools-0.1.19/wrangler",
+ "deploymentPath":"mingchen7/applications/Identifier-Service-App/checksum-0.1",
  "deploymentSystem":"data.iplantcollaborative.org",
  "executionSystem":"wrangler-ids-ming",
  "executionType":"HPC",
