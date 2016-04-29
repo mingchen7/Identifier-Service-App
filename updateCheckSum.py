@@ -39,10 +39,10 @@ def md5(fname):
     return hash_md5.hexdigest()
 
 def _client():
-	client_key = ''				  
-	client_secret = ''	
-	token = ''
-	refresh_token = ''
+	client_key = '9hBjqdHUWW4qaBXz7TH4fInfrdYa'				  
+	client_secret = 'xTsH1WesLavMsR1VXtC_WEh7Qzoa'	
+	token = 'c2748cdeb8b8712b6e3c397e7f02d86'
+	refresh_token = '5683c81ec4a7a7ec7a122125b24a7c2f'
 
 	try:		
 		agave = Agave(
@@ -86,8 +86,13 @@ def _update(uuid, fname):
 	else:
 		print "Checksum is NOT consistent with previous one!"
 
+		# should run some other checkings, just for testing here
+		# body['value']['checksum'] = checksum
+		# body['value']['lastChecksumUpdated'] = updated_time.strftime("%Y-%m-%dT%H:%M:%S")
+		# response = a.meta.updateMetadata(uuid = uuid, body = body)
+
 	_view(query)
-	return response['uuid']
+	return 0
 
 def _delete(uuid):
 	a = _client()
