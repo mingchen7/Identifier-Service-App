@@ -10,7 +10,7 @@ if [ "${DESTINATION_DIR: -1}" != '/' ]; then
 	exit 1
 fi
 
-echo $DESTINATION_DIR
+# echo $DESTINATION_DIR
 
 # Get the first 6 characters of SRA accession
 PREFIX_ACCESSION=`echo $SRA | cut -b 1-6`

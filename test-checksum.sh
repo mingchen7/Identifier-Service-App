@@ -5,25 +5,25 @@
 #SBATCH -n 15
 #SBATCH -A Evaluating-Identifie
 #SBATCH -J test-checksum
-#SBATCH -o test-checksum
+#SBATCH -o test-checksum.o%j
 
 # load python module and install agavepy
-# module load python
-# source virtualenvwrapper.sh
-# mkvirtualenv agave
-# pip install agavepy bpython
-# workon agave
+module load python
+source virtualenvwrapper.sh
+mkvirtualenv agave
+pip install agavepy bpython
+workon agave
 
 # install aspera connect tools
-# chmod 755 ./bin/install.sh
-# chmod 755 ./bin/aspera.sh
-# ./install.sh
+chmod 755 ./bin/install.sh
+chmod 755 ./bin/aspera.sh
+./bin/install.sh
 
 # get UUID and SRA number
 UUID="4181808582778351130-242ac1110-0001-012"
 SRA_NUM="SRR292241"
 STORE_PATH="./SRR/"
-echo "${STORE_PATH}${SRA_NUM}.sra"
+# echo "${STORE_PATH}${SRA_NUM}.sra"
 
 # Downloading file
 ./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
@@ -37,5 +37,7 @@ else
 fi
 
 python ./bin/updateCheckSum.py ${UUID} ${SRA_FILE}
-# rm -rf bin SRR
+rm -rf SRR
+rm aspera-connect-3.6.2.117442-linux-64.sh
+rm aspera-connect-3.6.2.117442-linux-64.tar.gz
 exit 0
