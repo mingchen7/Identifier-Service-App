@@ -12,7 +12,7 @@
         "agaveAuth": "agave://data.iplantcollaborative.org/mingchen7/others/authentication.json"
     },
     "parameters":{
-        "UUID":"4181808582778351130-242ac1110-0001-012",
-        "SRA":"SRR292241"
+        "UUID":"4544798190901268966-242ac1111-0001-012",
+        "SRA":"SRR304976"
     }
 }
