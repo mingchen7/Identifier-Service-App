@@ -7,18 +7,6 @@
 #SBATCH -J test-checksum
 #SBATCH -o test-checksum.o%j
 
-# load python module and install agavepy
-#module load python
-#source virtualenvwrapper.sh
-#mkvirtualenv agave
-#pip install agavepy bpython
-#workon agave
-
-# install aspera connect tools
-#chmod 755 ./bin/install.sh
-#chmod 755 ./bin/aspera.sh
-#./bin/install.sh
-
 export PATH=$PATH:"$HOME/.aspera/connect/bin"
 
 # get UUID and SRA number
