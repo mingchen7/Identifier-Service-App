@@ -48,8 +48,8 @@ def _client():
 	# print type(auth)
 	# print(auth)
 
-	client_key = '9hBjqdHUWW4qaBXz7TH4fInfrdYa'				  
-	client_secret = 'xTsH1WesLavMsR1VXtC_WEh7Qzoa'	
+	client_key = ''				  
+	client_secret = ''	
 	token = auth['access_token']
 	refresh_token = auth['refresh_token']
 
