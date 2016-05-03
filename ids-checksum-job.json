@@ -6,7 +6,7 @@
     "memoryPerNode": 2,
     "nodeCount": 1,
     "batchQueue": "debug",
-    "archive": true,
+    "archive": false,
     "archivePath": "",
     "inputs": {
         "agaveAuth": "agave://data.iplantcollaborative.org/mingchen7/others/authentication.json"

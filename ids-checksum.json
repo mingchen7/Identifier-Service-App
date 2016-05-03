@@ -21,23 +21,7 @@
  "templatePath":"checksum.template",
  "testPath":"test-checksum.sh",
  "version":"0.1",
- "inputs":[
-    {"id":"agaveAuth",
-     "value":
-        {"default":"authentication.json",
-         "order":0,
-         "required":false,
-         "validator":"",
-         "visible":true},
-     "semantics":
-        {"ontology":[],
-         "minCardinality":1,
-         "fileTypes":[]},
-     "details":
-        {"description":"",
-         "label":"The tokens for authenticate agavepy",
-         "argument":null,
-         "showArgument":false}}],
+ "inputs":[],
  "parameters":[
     {"id":"UUID",
      "value":
@@ -69,20 +53,5 @@
          "label":"SRA number for the file provided by NCBI",
          "argument":null,
          "showArgument":false}}],
- "outputs":[
-    {"id":"checksum",
-     "value":
-        {"default":"checksum.log",
-         "order":0,
-         "required":false,
-         "validator":"",
-         "visible":true},
-     "semantics":
-        {"ontology":[],
-         "minCardinality":1,
-         "fileTypes":[]},
-     "details":
-        {"description":"",
-         "label":"output log",
-         "argument":null,
-         "showArgument":false}}]}
+ "outputs":[]
+}

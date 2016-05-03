@@ -6,9 +6,10 @@ export PATH=$PATH:"$HOME/.aspera/connect/bin"
 UUID=${UUID}
 SRA_NUM=${SRA}
 STORE_PATH="./SRR/"
-# echo "${STORE_PATH}${SRA_NUM}.sra"
+echo "${STORE_PATH}${SRA_NUM}.sra"
 
 # Downloading file
+chmod 755 ./bin/aspera.sh
 ./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
 
 
