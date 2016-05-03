@@ -16,7 +16,7 @@ wget http://download.asperasoft.com/download/sw/connect/3.6.2/aspera-connect-3.6
 tar xvzf aspera-connect-3.6.2.117442-linux-64.tar.gz
 ./aspera-connect-3.6.2.117442-linux-64.sh
 chmod a+x ~/.aspera/connect/bin/* 
-export PATH=$PATH:"$HOME/.aspera/connect/bin"
+# export PATH=$PATH:"$HOME/.aspera/connect/bin"
 # echo "PATH=\$PATH:\$HOME/.aspera/connect/bin" >> ~/.bashrc
 
 

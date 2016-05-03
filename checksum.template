@@ -1,16 +1,17 @@
 #!/bin/bash
 
 # load python module and install agavepy
-module load python
-source virtualenvwrapper.sh
-mkvirtualenv agave
-pip install agavepy bpython
-workon agave
+# module load python
+# source virtualenvwrapper.sh
+# mkvirtualenv agave
+# pip install agavepy bpython
+# workon agave
 
 # install aspera connect tools
-chmod 755 ./bin/install.sh
-chmod 755 ./bin/aspera.sh
-./bin/install.sh
+# chmod 755 ./bin/install.sh
+# chmod 755 ./bin/aspera.sh
+# ./bin/install.sh
+export PATH=$PATH:"$HOME/.aspera/connect/bin"
 
 # get UUID and SRA number
 UUID=${UUID}
@@ -29,8 +30,16 @@ else
 	exit 1
 fi
 
-python ./bin/updateCheckSum.py ${UUID} ${SRA_FILE}
+if [ ! -f "${SRA_FILE}" ]; then
+        echo 'SRA file not found! Please confirm the path.'
+        exit 1
+fi
+
+md5=($(md5sum ${SRA_FILE}))
+lastChecksumUpdated=$(date '+%Y-%m-%d %X')
+
+# post the checksum to webhook
+curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1hop29g1
+
 rm -rf SRR
-rm aspera-connect-3.6.2.117442-linux-64.sh
-rm aspera-connect-3.6.2.117442-linux-64.tar.gz
 exit 0
