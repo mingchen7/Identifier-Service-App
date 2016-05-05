@@ -1,3 +1,0 @@
-ascp -T -l640M -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh anonftp@ftp.ncbi.nlm.nih.gov:1GB ~/Downloads
-ascp -T -l640M -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR292/SRR292241/SRR292241.sra ~/Downloads
-ascp -T -l640M -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR/SRR304/SRR304976/SRR304976.sra ~/Downloads

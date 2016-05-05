@@ -21,7 +21,21 @@
  "templatePath":"checksum.template",
  "testPath":"test-checksum.sh",
  "version":"0.1",
- "inputs":[],
+ "inputs":[
+    {"id":"agaveFile",
+     "value":
+        {"default":"",
+         "order":0,
+         "required":false,
+         "validator":"",
+         "visible":true},
+     "semantics":
+        {"ontology":[]},
+     "details":
+        {"description":null,
+         "label":"internal file on the agave platform",
+         "argument":null,
+         "showArgument":false}}],
  "parameters":[
     {"id":"UUID",
      "value":
@@ -36,6 +50,21 @@
      "details":
         {"description":null,
          "label":"UUID for the registered file",
+         "argument":null,
+         "showArgument":false}},
+    {"id":"URL",
+     "value":
+        {"default":"",
+         "order":1,
+         "required":false,
+         "type":"string",
+         "validator":"",
+         "visible":true},
+     "semantics":
+        {"ontology":[]},
+     "details":
+        {"description":null,
+         "label":"public URL for downloading file",
          "argument":null,
          "showArgument":false}},
     {"id":"SRA",
