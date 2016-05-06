@@ -13,11 +13,12 @@ fi
 # echo $DESTINATION_DIR
 
 # Get the first 6 characters of SRA accession
+PREFIX=`echo $SRA | cut -b 1-3`
 PREFIX_ACCESSION=`echo $SRA | cut -b 1-6`
 
 # Join command
-FTP_PREFIX='anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra/SRR'
-FTP_ADDRESS="$FTP_PREFIX/$PREFIX_ACCESSION/$SRA/$SRA.sra"
+FTP_PREFIX='anonftp@ftp.ncbi.nlm.nih.gov:/sra/sra-instant/reads/ByRun/sra'
+FTP_ADDRESS="$FTP_PREFIX/$PREFIX/$PREFIX_ACCESSION/$SRA/$SRA.sra"
 echo -e "ftp address:\n$FTP_ADDRESS"
 
 # Create a new directory if not exists

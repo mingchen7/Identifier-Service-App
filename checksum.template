@@ -5,31 +5,60 @@ export PATH=$PATH:"$HOME/.aspera/connect/bin"
 # get UUID and SRA number
 UUID=${UUID}
 SRA_NUM=${SRA}
-STORE_PATH="./SRR/"
-echo "${STORE_PATH}${SRA_NUM}.sra"
+AGAVE_FILE=${AGAVE_URL}
+EXTERNAL_URL=${URL}
+# SRA_PATH="./SRA/"
 
-# Downloading file
-chmod 755 ./bin/aspera.sh
-./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
+FILE_PATH=""
 
-
-# Running checksum and update metadata
-if [ $? -eq 0 ]; then
-	SRA_FILE="${STORE_PATH}${SRA_NUM}.sra"
+echo ${AGAVE_FILE}
+# internal agave file provided
+if [ ${AGAVE_FILE} != "" ]; then
+	FILE_PATH=${AGAVE_FILE}
 else
-	exit 1
+	# SRA number provided
+	if [ ${SRA_NUM} != "" ];then
+		# Downloading file
+		chmod 755 ./bin/aspera.sh
+		./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
+
+		# Running checksum and update metadata
+		if [ $? -eq 0 ]; then
+			FILE_PATH="./SRA/${SRA_NUM}.sra"
+		else
+			exit 1
+		fi
+	else
+		# external file URL provided
+		if [ ${EXTERNAL_URL} != "" ]; then
+			# Download external file
+			wget ${EXTERNAL_URL}
+			
+			if [ $? -eq 0 ]; then
+				FILE_PATH="${EXTERNAL_URL##*/}"
+			else
+				exit 1
+			fi
+		else
+			echo 'No input of file match!'
+			exit 1 
+		fi
+	fi
 fi
 
-if [ ! -f "${SRA_FILE}" ]; then
-        echo 'SRA file not found! Please confirm the path.'
+echo ${FILE_PATH}
+	
+if [ ! -f "${FILE_PATH}" ]; then
+        echo 'File not found! Please confirm the input.'
         exit 1
 fi
 
-md5=($(md5sum ${SRA_FILE}))
+md5=($(md5sum ${FILE_PATH}))
 lastChecksumUpdated=$(date '+%Y-%m-%d %X')
 
 # post the checksum to webhook
-curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1hop29g1
+curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1a7963p1
 
-rm -rf SRR
+rm ${FILE_PATH}
+rm -rf SRA
 exit 0

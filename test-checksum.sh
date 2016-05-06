@@ -11,8 +11,9 @@ export PATH=$PATH:"$HOME/.aspera/connect/bin"
 
 # get UUID and SRA number
 UUID="4181808582778351130-242ac1110-0001-012"
-SRA_NUM="SRR292241"
-STORE_PATH="./SRR/"
+# SRA_NUM="SRR292241"
+SRA_NUM="ERR650315"
+STORE_PATH="./SRA/"
 
 # Downloading file
 ./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
@@ -34,7 +35,7 @@ md5=($(md5sum ${SRA_FILE}))
 lastChecksumUpdated=$(date '+%Y-%m-%d %X')
 
 # post the checksum to webhook
-curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1hop29g1
+curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1a7963p1
 
-rm -rf SRR
+rm -rf SRA
 exit 0

@@ -22,7 +22,7 @@
  "testPath":"test-checksum.sh",
  "version":"0.1",
  "inputs":[
-    {"id":"agaveFile",
+    {"id":"AGAVE_URL",
      "value":
         {"default":"",
          "order":0,
