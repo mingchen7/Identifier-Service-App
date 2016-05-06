@@ -11,6 +11,8 @@
     "inputs": {
         "AGAVE_URL": "agave://data.iplantcollaborative.org/mingchen7/others/WGSOryza_CIAT_LSU_USDA_NCGR_SV.tar.gz"},
     "parameters":{
-        "UUID":"4544798190901268966-242ac1111-0001-012"
+        "UUID":"4544798190901268966-242ac1111-0001-012",
+	"SRA":"SRR304976",
+	"URL":"http://datadryad.org/bitstream/handle/10255/dryad.80422/WGSOryza_CIAT_LSU_USDA_NCGR_SV.tar.gz"
     }
 }

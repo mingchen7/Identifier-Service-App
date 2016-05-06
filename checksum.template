@@ -57,7 +57,7 @@ md5=($(md5sum ${FILE_PATH}))
 lastChecksumUpdated=$(date '+%Y-%m-%d %X')
 
 # post the checksum to webhook
-curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1a7963p1
+curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1k6cefl1
 
 rm ${FILE_PATH}
 rm -rf SRA
