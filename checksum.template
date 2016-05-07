@@ -7,7 +7,7 @@ UUID=${UUID}
 SRA_NUM=${SRA}
 AGAVE_FILE=${AGAVE_URL}
 EXTERNAL_URL=${URL}
-# SRA_PATH="./SRA/"
+SRA_PATH="./SRA/"
 
 FILE_PATH=""
 
@@ -20,7 +20,7 @@ else
 	if [ ${SRA_NUM} != "" ];then
 		# Downloading file
 		chmod 755 ./bin/aspera.sh
-		./bin/aspera.sh ${SRA_NUM} ${STORE_PATH}
+		./bin/aspera.sh ${SRA_NUM} ${SRA_PATH}
 
 		# Running checksum and update metadata
 		if [ $? -eq 0 ]; then

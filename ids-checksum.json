@@ -37,7 +37,7 @@
          "argument":null,
          "showArgument":false}}],
  "parameters":[
-    {"id":"UUID",
+   {"id":"UUID",
      "value":
         {"default":"",
          "order":1,
@@ -82,5 +82,5 @@
          "label":"SRA number for the file provided by NCBI",
          "argument":null,
          "showArgument":false}}],
- "outputs":[]
+"outputs":[]
 }
