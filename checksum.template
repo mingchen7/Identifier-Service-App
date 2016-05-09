@@ -11,7 +11,7 @@ SRA_PATH="./SRA/"
 
 FILE_PATH=""
 
-echo ${AGAVE_FILE}
+# echo ${AGAVE_FILE}
 # internal agave file provided
 if [ ${AGAVE_FILE} != "" ]; then
 	FILE_PATH=${AGAVE_FILE}
@@ -55,6 +55,7 @@ fi
 
 md5=($(md5sum ${FILE_PATH}))
 lastChecksumUpdated=$(date '+%Y-%m-%d %X')
+echo ${md5}
 
 # post the checksum to webhook
 curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/1k6cefl1
