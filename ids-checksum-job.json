@@ -8,9 +8,9 @@
     "batchQueue": "debug",
     "archive": false,
     "archivePath": "",
-    "inputs": {},
+    "inputs": {
+	"AGAVE_URL":"agave://corral-tacc-00/corral-tacc/tacc/iplant/vaughn/springer_vaughn/eichten/5genos/B73_all3_R1_val_1.fq"},
     "parameters":{
-	"UUID":"4544798190901268966-242ac1111-0001-012",	
-	"SRA":"SRR2120219"
+	"UUID":"4544798190901268966-242ac1111-0001-012"
     }
 }
