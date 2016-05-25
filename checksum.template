@@ -60,7 +60,7 @@ echo ${md5}
 
 # post the checksum to webhook
 curl -k --data "UUID=${UUID}&checksum=${md5}&lastChecksumUpdated=${lastChecksumUpdated}" http://requestb.in/v0cdvwv0
-curl -k -data '{"UUID":${UUID},"checksum":${md5}}' https://identifierservices.org/webhook/agave
+curl -k --data '{"UUID":${UUID},"checksum":${md5}}' https://identifierservices.org/webhook/agave
 
 rm ${FILE_PATH}
 rm -rf SRA
